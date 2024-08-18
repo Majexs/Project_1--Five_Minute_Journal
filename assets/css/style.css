@@ -19,3 +19,15 @@
 .list-of-habits {
   list-style-type: none;
 }
+
+.OnDisplay{
+  display: block;
+}
+
+.OffDisplay{
+  display: none;
+}
+
+.quoteCard{
+  text-align: center;
+}
