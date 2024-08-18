@@ -1,3 +1,17 @@
+/* Added image background to landing page*/
+body {
+  margin: 0; 
+  padding: 0;
+  height: 100vh; /* Full viewport height */
+  background-image: url('https://images.pexels.com/photos/1084510/pexels-photo-1084510.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); /* Replace with the path to your image */
+  background-size: cover; /* Ensures the image covers the entire background */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  font-family: 'Georgia', serif; /* Optional: Sets a classic font */
+  color: black; /* Optional: Sets text color for better readability */
+}
+/* end of image background */
+
 :root {
   --grid-cols: 1;
   --grid-rows: 1;
@@ -11,7 +25,7 @@
 
 .grid-item {
   padding: .25em;
-  border: 1px solid #ddd;
+  border: 1px solid #0c0b0b;
   text-align: center;
 
 }
