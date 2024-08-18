@@ -109,9 +109,4 @@ document.addEventListener('DOMContentLoaded', () => {
       energyValueSpan.textContent = value;
       localStorage.setItem('energyLevel', value);
   });
-
-  // Redirect to journal page
-  journalButton.addEventListener('click', () => {
-      window.location.href = 'journal.html'; // Adjust the URL to your journal page
-  });
 });
