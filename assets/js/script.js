@@ -72,39 +72,46 @@ yesterdaysHighlight.textcontent = randomJournalEntry;
 
 //--------------------------------------------------------------------------------
 
-document.querySelectorAll('.emoji').forEach(emoji => {
-  emoji.addEventListener('click', function() {
-      // Remove selected class from all emojis
-      document.querySelectorAll('.emoji').forEach(e => e.classList.remove('selected'));
+document.addEventListener('DOMContentLoaded', () => {
+  const moodButtons = document.querySelectorAll('.mood-btn');
+  const energyLevelInput = document.getElementById('energyLevel');
+  const energyValueSpan = document.getElementById('energyValue');
+  const moodMessage = document.getElementById('moodMessage');
+  const journalButton = document.getElementById('journalButton');
 
-      // Add selected class to the clicked emoji
-      this.classList.add('selected');
+  // Load saved data
+  const savedMood = localStorage.getItem('mood');
+  const savedEnergy = localStorage.getItem('energyLevel');
 
-      // Update the mood text
-      const moodText = this.getAttribute('data-mood');
-      let moodDescription = '';
-      switch(moodText) {
-          case '1':
-              moodDescription = 'Very Sad';
-              break;
-          case '2':
-              moodDescription = 'Sad';
-              break;
-          case '3':
-              moodDescription = 'Neutral';
-              break;
-          case '4':
-              moodDescription = 'Happy';
-              break;
-          case '5':
-              moodDescription = 'Very Happy';
-              break;
-      }
-      document.getElementById('selected-mood').textContent = `Your mood: ${moodDescription}`;
+  if (savedMood) {
+      moodButtons.forEach(button => {
+          if (button.dataset.mood === savedMood) {
+              button.style.backgroundColor = '#d3d3d3'; // Highlight selected mood
+              moodMessage.textContent = `You are ${savedMood.replace('-', ' ')} today`;
+          }
+      });
+  }
+
+  if (savedEnergy) {
+      energyLevelInput.value = savedEnergy;
+      energyValueSpan.textContent = savedEnergy;
+  }
+
+  // Mood selection
+  moodButtons.forEach(button => {
+      button.addEventListener('click', () => {
+          moodButtons.forEach(btn => btn.style.backgroundColor = ''); // Remove highlight
+          button.style.backgroundColor = '#d3d3d3'; // Highlight selected mood
+          const mood = button.dataset.mood;
+          localStorage.setItem('mood', mood);
+          moodMessage.textContent = `You are ${mood.replace('-', ' ')} today`;
+      });
+  });
+
+  // Energy level adjustment
+  energyLevelInput.addEventListener('input', (e) => {
+      const value = e.target.value;
+      energyValueSpan.textContent = value;
+      localStorage.setItem('energyLevel', value);
   });
 });
-
-function updateEnergyLevel() {
-  var energyLevel = document.getElementById("energyRange").value;
-  document.getElementById("energyOutput").innerText = energyLevel;
-}
