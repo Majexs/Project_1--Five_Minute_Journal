@@ -23,7 +23,7 @@ for (i=0; i<arr.length; i++){
   }
 }
 
-// submit button saves checked box data to storage
+// Submit button saves checked box data to storage
 
 const submitYesterday = document.getElementById('submit_yesterday');
 submitYesterday.addEventListener('click', function(event) {
@@ -45,10 +45,10 @@ submitYesterday.addEventListener('click', function(event) {
 
   if (productivityLog !== null) {
     for (i = 0; i < productivityLog.length; i++) {
-      productivityLog[i].challenged? document.getElementById(`${i+1}-1`).setAttribute('style', 'background-color: green;') : document.getElementById(`${i+1}-1`).setAttribute('style', 'background-color: red;')
-      productivityLog[i].hydrated? document.getElementById(`${i+1}-2`).setAttribute('style', 'background-color: green;') : document.getElementById(`${i+1}-2`).setAttribute('style', 'background-color: red;')
-      productivityLog[i].learned? document.getElementById(`${i+1}-3`).setAttribute('style', 'background-color: green;') : document.getElementById(`${i+1}-3`).setAttribute('style', 'background-color: red;')
-      productivityLog[i].walked? document.getElementById(`${i+1}-4`).setAttribute('style', 'background-color: green;') : document.getElementById(`${i+1}-4`).setAttribute('style', 'background-color: red;')
+      productivityLog[i].challenged? document.getElementById(`${i+1}-1`).setAttribute('style', 'background-color: #55883B;') : document.getElementById(`${i+1}-1`).setAttribute('style', 'background-color: #9A6735;')
+      productivityLog[i].hydrated? document.getElementById(`${i+1}-2`).setAttribute('style', 'background-color: #55883B;') : document.getElementById(`${i+1}-2`).setAttribute('style', 'background-color: #9A6735;')
+      productivityLog[i].learned? document.getElementById(`${i+1}-3`).setAttribute('style', 'background-color: #55883B;') : document.getElementById(`${i+1}-3`).setAttribute('style', 'background-color: #9A6735;')
+      productivityLog[i].walked? document.getElementById(`${i+1}-4`).setAttribute('style', 'background-color: #55883B;') : document.getElementById(`${i+1}-4`).setAttribute('style', 'background-color: #9A6735;')
         }
       }
     }
@@ -56,14 +56,19 @@ submitYesterday.addEventListener('click', function(event) {
 
 
 // Yesterday's Highlight Section
+const yesterdaysHighlight = document.querySelector('.yesterdays_highlight');
 
-  // Function to pull a random entry from yesterday out and display it
+// Function to pull a random entry from yesterday out and display it
 
-      // Collect an array of data from Local Storage
+// Collect an array of data from Local Storage
+const yesterdaysEntry = JSON.parse(localStorage.getItem('formEntries')) || [];
 
-      // Take a random item from the array
+// Take a random item from the array
+const randomJournalEntry = yesterdaysEntry[Math.floor(Math.random() * yesterdaysEntry.length)];
 
-      // Display that random item to the <p> tag
+// Display that random item to the <p> tag
+yesterdaysHighlight.textcontent = randomJournalEntry;
+
 
 //--------------------------------------------------------------------------------
 
