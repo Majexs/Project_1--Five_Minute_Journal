@@ -40,48 +40,39 @@ document.getElementById('submitButton').addEventListener('click', function() {
     stopTimer();
   });
 
-// Object to store form data
-const journalEntry = {
-    greatfulInput: {},
-    todayInput: {},
-    affirmationInput:{}
+// Add event listeners to submit button
+document.getElementById('submitButton').addEventListener('click', function() {
+
+//Collect greatfulForm data in an object
+let greatfulForm = {
+  greatfulEntry1: document.getElementById('greatfulEntry1').value,
+  greatfulEntry2: document.getElementById('greatfulEntry2').value,
+  greatfulEntry3: document.getElementById('greatfulEntry3').value
 };
 
-//Function to handel form submission
-function journalSubmit (event, formElement, formKey) {
-    event.preventDefault(); // Prevent the default form submission
+//Collect todayForm data in an object
+let todayForm = {
+  todayEntry1: document.getElementById('todayExcellent1').value,
+  todayEntry2: document.getElementById('todayExcellent2').value,
+  todayEntry3: document.getElementById('todayExcellent3').value
+};
 
-    const formEntries = {};
-    const inputs = formElement.querySelectorAll('input');
+//Collect todayForm data in an object
+let affirmationForm = {
+  affirmationEntry1: document.getElementById('dailyAffirmation1').value,
+  affirmationEntry2: document.getElementById('dailyAffirmation2').value,
+  affirmationEntry3: document.getElementById('dailyAffirmation3').value
+};
 
-    inputs.forEach(input => {
-        formEntries[input.name] = input.value;
-    });
-
-    journalEntry[formKey] = formEntries;
-    console.log(journalEntry);
+//Store all form data in an object
+let allFormData = {
+  greatfulFormData: greatfulForm,
+  todayFormData: todayForm,
+  affirmationFormData: affirmationForm
 }
 
-//Function to call journalSubmit function and pass the form element into corresponding object
-//ex. putting the data from the first form into greatfulInput when submit button is clicked
-function handelSubmitButtonClick (event) {
-    console.log('hello');
-    event.preventDefault(); //Prevent default button action
-
-    //Get each form element
-    const greatfulElement = document.getElementById ('greatfulForm');
-    const todayElement = document.getElementById ('todayForm');
-    const affirmationElement = document.getElementById ('affirmationForm');
-
-    //Handel each form submission
-    journalSubmit(event, greatfulElement, 'greatfulInput');
-    journalSubmit(event, todayElement, 'todayInput');
-    journalSubmit(event, affirmationElement, 'affirmationInput');
-}
-
-// Add event listeners to submit button
-document.getElementById('submitButton').addEventListener('click',handelSubmitButtonClick);
-
+console.log(allFormData);
+});
 
 //feature-submission_popup
 var button = document.getElementById('submitButton');
