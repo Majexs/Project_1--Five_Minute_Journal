@@ -61,13 +61,13 @@ const yesterdaysHighlight = document.querySelector('.yesterdays_highlight');
 // Function to pull a random entry from yesterday out and display it
 
 // Collect an array of data from Local Storage
-const yesterdaysEntry = JSON.parse(localStorage.getItem('formEntries')) || [];
+const yesterdaysEntry = JSON.parse(localStorage.getItem('allFormData')) || [];
 
 // Take a random item from the array
 const randomJournalEntry = yesterdaysEntry[Math.floor(Math.random() * yesterdaysEntry.length)];
 
 // Display that random item to the <p> tag
-yesterdaysHighlight.textcontent = randomJournalEntry;
+yesterdaysHighlight.textContent = randomJournalEntry;
 
 
 //--------------------------------------------------------------------------------
