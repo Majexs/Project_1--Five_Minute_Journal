@@ -15,7 +15,9 @@ body {
 
 }
 /* end of image background */
-
+.title{
+  width:fit-content;
+}
 :root {
   --grid-cols: 1;
   --grid-rows: 1;
