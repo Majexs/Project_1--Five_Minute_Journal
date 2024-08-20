@@ -63,11 +63,11 @@
                 </section>
 
                 <!--Temperature Check-->
-                <div class="border border-primary">
-                    <div class="row">
-                        <div class="col">
+                <div class="mx-auto mood">
+                    <div>
+                        <div>
                             <h1 class="">What's your mood today?</h1>
-                            <div class="mood-selection mb-4">
+                            <div>
                                 <button class="btn btn-light mood-btn" data-mood="very-sad" aria-label="Very Sad">&#128577;</button>
                                 <button class="btn btn-light mood-btn" data-mood="sad" aria-label="Sad">&#128543;</button>
                                 <button class="btn btn-light mood-btn" data-mood="neutral" aria-label="Neutral">&#128528;</button>
@@ -76,9 +76,9 @@
                             </div>
                             <div id="moodMessage" class="mood-message mb-4"></div>
             
-                            <h2 class="border-primary">What's your energy level today?</h2>
-                            <div class="energy-gauge mb-4">
-                                <input type="range" id="energyLevel" class="form-range" min="0" max="100" value="100">
+                            <h2>What's your energy level today?</h2>
+                            <div>
+                                <input type="range" id="energyLevel" min="0" max="100" value="100">
                                 <span id="energyValue" class="d-block mt-2">100</span>
                             </div>
                             <button onclick="window.location.href='./page2.html';">Start Five Minute Journal</button>
@@ -86,7 +86,7 @@
                     </div>
                 
             
-                <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
             <script src= "./assets/js/script.js"></script>
             <script src="./assets/js/journal.js"></script>
         </body>

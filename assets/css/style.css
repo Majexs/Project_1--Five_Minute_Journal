@@ -4,7 +4,8 @@ body {
   margin: 0 auto; 
   padding: 0;
   height: 100vh; /* Full viewport height */
-  background-image: url('https://images.pexels.com/photos/305821/pexels-photo-305821.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); /* Replace with the path to your image */
+  background-image: url('https://images.pexels.com/photos/305821/pexels-photo-305821.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+   /* Replace with the path to your image */
   background-size: cover; /* Ensures the image covers the entire background */
   background-position: center; /* Centers the image */
   background-repeat: no-repeat; /* Prevents the image from repeating */
@@ -17,6 +18,22 @@ body {
 /* end of image background */
 .title{
   width:fit-content;
+}
+.mood{
+  display: block;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+}
+
+#energyLevel{
+  background-color: #0c0b0b;
+  width: 25%;
+  display: block;
+ 
+
+ 
+  border-radius: 4px;
 }
 :root {
   --grid-cols: 1;
