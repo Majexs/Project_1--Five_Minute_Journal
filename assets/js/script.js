@@ -23,7 +23,7 @@ for (i=0; i<arr.length; i++){
   }
 }
 
-// submit button saves checked box data to storage
+// Submit button saves checked box data to storage
 
 const submitYesterday = document.getElementById('submit_yesterday');
 submitYesterday.addEventListener('click', function(event) {
@@ -45,10 +45,10 @@ submitYesterday.addEventListener('click', function(event) {
 
   if (productivityLog !== null) {
     for (i = 0; i < productivityLog.length; i++) {
-      productivityLog[i].challenged? document.getElementById(`${i+1}-1`).setAttribute('style', 'background-color: green;') : document.getElementById(`${i+1}-1`).setAttribute('style', 'background-color: red;')
-      productivityLog[i].hydrated? document.getElementById(`${i+1}-2`).setAttribute('style', 'background-color: green;') : document.getElementById(`${i+1}-2`).setAttribute('style', 'background-color: red;')
-      productivityLog[i].learned? document.getElementById(`${i+1}-3`).setAttribute('style', 'background-color: green;') : document.getElementById(`${i+1}-3`).setAttribute('style', 'background-color: red;')
-      productivityLog[i].walked? document.getElementById(`${i+1}-4`).setAttribute('style', 'background-color: green;') : document.getElementById(`${i+1}-4`).setAttribute('style', 'background-color: red;')
+      productivityLog[i].challenged? document.getElementById(`${i+1}-1`).setAttribute('style', 'background-color: #55883B;') : document.getElementById(`${i+1}-1`).setAttribute('style', 'background-color: #9A6735;')
+      productivityLog[i].hydrated? document.getElementById(`${i+1}-2`).setAttribute('style', 'background-color: #55883B;') : document.getElementById(`${i+1}-2`).setAttribute('style', 'background-color: #9A6735;')
+      productivityLog[i].learned? document.getElementById(`${i+1}-3`).setAttribute('style', 'background-color: #55883B;') : document.getElementById(`${i+1}-3`).setAttribute('style', 'background-color: #9A6735;')
+      productivityLog[i].walked? document.getElementById(`${i+1}-4`).setAttribute('style', 'background-color: #55883B;') : document.getElementById(`${i+1}-4`).setAttribute('style', 'background-color: #9A6735;')
         }
       }
     }
@@ -56,50 +56,62 @@ submitYesterday.addEventListener('click', function(event) {
 
 
 // Yesterday's Highlight Section
+const yesterdaysHighlight = document.querySelector('.yesterdays_highlight');
 
-  // Function to pull a random entry from yesterday out and display it
+// Function to pull a random entry from yesterday out and display it
 
-      // Collect an array of data from Local Storage
+// Collect an array of data from Local Storage
+const yesterdaysEntry = JSON.parse(localStorage.getItem('formEntries')) || [];
 
-      // Take a random item from the array
+// Take a random item from the array
+const randomJournalEntry = yesterdaysEntry[Math.floor(Math.random() * yesterdaysEntry.length)];
 
-      // Display that random item to the <p> tag
+// Display that random item to the <p> tag
+yesterdaysHighlight.textcontent = randomJournalEntry;
+
 
 //--------------------------------------------------------------------------------
 
-document.querySelectorAll('.emoji').forEach(emoji => {
-  emoji.addEventListener('click', function() {
-      // Remove selected class from all emojis
-      document.querySelectorAll('.emoji').forEach(e => e.classList.remove('selected'));
+document.addEventListener('DOMContentLoaded', () => {
+  const moodButtons = document.querySelectorAll('.mood-btn');
+  const energyLevelInput = document.getElementById('energyLevel');
+  const energyValueSpan = document.getElementById('energyValue');
+  const moodMessage = document.getElementById('moodMessage');
+  const journalButton = document.getElementById('journalButton');
 
-      // Add selected class to the clicked emoji
-      this.classList.add('selected');
+  // Load saved data
+  const savedMood = localStorage.getItem('mood');
+  const savedEnergy = localStorage.getItem('energyLevel');
 
-      // Update the mood text
-      const moodText = this.getAttribute('data-mood');
-      let moodDescription = '';
-      switch(moodText) {
-          case '1':
-              moodDescription = 'Very Sad';
-              break;
-          case '2':
-              moodDescription = 'Sad';
-              break;
-          case '3':
-              moodDescription = 'Neutral';
-              break;
-          case '4':
-              moodDescription = 'Happy';
-              break;
-          case '5':
-              moodDescription = 'Very Happy';
-              break;
-      }
-      document.getElementById('selected-mood').textContent = `Your mood: ${moodDescription}`;
+  if (savedMood) {
+      moodButtons.forEach(button => {
+          if (button.dataset.mood === savedMood) {
+              button.style.backgroundColor = '#d3d3d3'; // Highlight selected mood
+              moodMessage.textContent = `You are ${savedMood.replace('-', ' ')} today`;
+          }
+      });
+  }
+
+  if (savedEnergy) {
+      energyLevelInput.value = savedEnergy;
+      energyValueSpan.textContent = savedEnergy;
+  }
+
+  // Mood selection
+  moodButtons.forEach(button => {
+      button.addEventListener('click', () => {
+          moodButtons.forEach(btn => btn.style.backgroundColor = ''); // Remove highlight
+          button.style.backgroundColor = '#d3d3d3'; // Highlight selected mood
+          const mood = button.dataset.mood;
+          localStorage.setItem('mood', mood);
+          moodMessage.textContent = `You are ${mood.replace('-', ' ')} today`;
+      });
+  });
+
+  // Energy level adjustment
+  energyLevelInput.addEventListener('input', (e) => {
+      const value = e.target.value;
+      energyValueSpan.textContent = value;
+      localStorage.setItem('energyLevel', value);
   });
 });
-
-function updateEnergyLevel() {
-  var energyLevel = document.getElementById("energyRange").value;
-  document.getElementById("energyOutput").innerText = energyLevel;
-}

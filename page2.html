@@ -6,6 +6,8 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <link rel="stylesheet" href="assets/css/style.css">
         <title>Five Minute Journal</title>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
     </head>
         <body>
            
@@ -14,61 +16,106 @@
                     <h1>Five Minute Journal</h1>
                 </header>
                 <!--Journal Entry-->
+
                 <section id="journalEntry" class="OnDisplay">
+
+
+                <section class="container mt-5">
 
                     <h1>5 Minute Journal</h1>
                     <!--Timer-->
                     <div id="timer">00:00</div>
 
                     <!--I am grateful for-->
-                    <div>
-                        <h2>I am grateful for...</h2>
-                        <form id="greatfulForm"></form>
-                            <label for="greatfulEntry1">1.</label>
-                            <input type="text" id="greatfulEntry1" name="input1">
-                            <br><br>
-                            
-                            <label for="greatfulEntry2">2.</label>
-                            <input type="text" id="greatfulEntry2" name="input2">
-                            <br><br>
+                    <div class="container">
+                        <form id="greatfulForm" class="mb-3">
+                            <h3>I am grateful for...</h3>
+                            <div class="form-group row">
+                                <label for="greatfulEntry1" class="col-sm-1 col-form-label">1.</label>
+                                <div class="col-sm-11">
+                                    <input type="text" id="greatfulEntry1" class="form-control" name="Input 1">
+                                </div>
+                                <br><br>
+                            </div>
 
-                            <label for="greatfulEntry3">3.</label>
-                            <input type="text" id="greatfulEntry3" name="input3">
-                            <br><br>
+                            <div class="form-group row">
+                                <label for="greatfulEntry2" class="col-sm-1 col-form-label">2.</label>
+                                <div class="col-sm-11">
+                                    <input type="text" id="greatfulEntry2" class="form-control" name="Input 2">
+                                </div>
+                                <br><br>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="greatfulEntry3" class="col-sm-1 col-form-label">3.</label>
+                                <div class="col-sm-11">
+                                    <input type="text" id="greatfulEntry3" class="form-control" name="Input 3">
+                                </div>
+                                <br><br>
+                            </div>
+                        </form>
                     </div>
 
                     <!--What would make today great?-->
                     <div>
-                        <h2>What would make today excellent?</h2>
-                        <form id="todayForm"></form>
-                            <label for="todayExcellent1">1.</label>
-                            <input type="text" id="todayExcellent1" name="input1">
-                            <br><br>
-                            
-                            <label for="todayExcellent2">2.</label>
-                            <input type="text" id="todayExcellent2" name="input2">
-                            <br><br>
+                        <form id="todayForm" class="mb-3">
+                            <h3>What would make today excellent?</h3>
+                            <div class="form-group row">
+                                <label for="todayExcellent1" class="col-form-label">1.</label>
+                                <div class="col-sm-11">
+                                    <input type="text" id="todayExcellent1" class="form-control" name="Input 1">
+                                </div>
+                                <br><br>
+                            </div>
 
-                            <label for="todayExcellent3">3.</label>
-                            <input type="text" id="todayExcellent3" name="input3">
-                            <br><br>
+                            <div class="form-group row">
+                                <label for="todayExcellent2" class="col-form-label">2.</label>
+                                <div class="col-sm-11">
+                                    <input type="text" id="todayExcellent2" class="form-control" name="Input 2">
+                                </div>
+                                <br><br>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="todayExcellent3" class="col-form-label">3.</label>
+                                <div class="col-sm-11">
+                                    <input type="text" id="todayExcellent3" class="form-control" name="Input 3">
+                                </div>
+                                <br><br>
+                            </div>
+
+                        </form>
                     </div>
 
                     <!--Daily affirmations-->
                     <div>
-                        <h2>Daily affirmations</h2>
-                         <form id="affirmationForm"></form>
-                            <label for="dailyAffirmation1">1.</label>
-                            <input type="text" id="dailyAffirmation1" name="input1">
-                            <br><br>
-                            
-                            <label for="dailyAffirmation2">2.</label>
-                            <input type="text" id="dailyAffirmation2" name="input2">
-                            <br><br>
+                        <form id="affirmationForm" class="mb-3">
+                            <h3>Daily affirmations</h3>
+                            <div class="form-group row">
+                                <label for="dailyAffirmation1" class="col-form-label">1.</label>
+                                <div class="col-sm-11">
+                                    <input type="text" id="dailyAffirmation1" class="form-control" name="Input 1">
+                                </div>
+                                <br><br>
+                            </div>
 
-                            <label for="dailyAffirmation3">3.</label>
-                            <input type="text" id="dailyAffirmation3" name="input3">
-                            <br><br>
+                            <div class="form-group row">
+                                <label for="dailyAffirmation2" class="col-form-label">2.</label>
+                                <div class="col-sm-11">
+                                    <input type="text" id="dailyAffirmation2" class="form-control" name="Input 2">
+                                </div>
+                                <br><br>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="dailyAffirmation3" class="col-form-label">3.</label>
+                                <div class="col-sm-11">
+                                    <input type="text" id="dailyAffirmation3" class="form-control" name="Input 3">
+                                </div>
+                                <br><br>
+                            </div>
+
+                        </form>
                     </div>
 
                     <!--End Journal Submit Button-->
@@ -102,5 +149,10 @@
                 
             </footer>
             <script src="./assets/js/journal.js"></script>
+
+            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
         </body>
     </html>
