@@ -23,6 +23,17 @@ for (i=0; i<arr.length; i++){
   }
 }
 
+// Maintaining Grid After Refresh
+const productivityLog = JSON.parse(localStorage.getItem('dailyProductivity')) || [];
+if (productivityLog !== null) {
+  for (i = 0; i < productivityLog.length; i++) {
+    productivityLog[i].challenged? document.getElementById(`${i+1}-1`).setAttribute('style', 'background-color: #218838;') : document.getElementById(`${i+1}-1`).setAttribute('style', 'background-color: #D1A54B;')
+    productivityLog[i].hydrated? document.getElementById(`${i+1}-2`).setAttribute('style', 'background-color: #218838;') : document.getElementById(`${i+1}-2`).setAttribute('style', 'background-color: #D1A54B;')
+    productivityLog[i].learned? document.getElementById(`${i+1}-3`).setAttribute('style', 'background-color: #218838;') : document.getElementById(`${i+1}-3`).setAttribute('style', 'background-color: #D1A54B;')
+    productivityLog[i].walked? document.getElementById(`${i+1}-4`).setAttribute('style', 'background-color: #218838;') : document.getElementById(`${i+1}-4`).setAttribute('style', 'background-color: #D1A54B;')
+    }
+  }
+
 // Submit button saves checked box data to storage
 
 const submitYesterday = document.getElementById('submit_yesterday');
@@ -45,13 +56,13 @@ submitYesterday.addEventListener('click', function(event) {
 
   if (productivityLog !== null) {
     for (i = 0; i < productivityLog.length; i++) {
-      productivityLog[i].challenged? document.getElementById(`${i+1}-1`).setAttribute('style', 'background-color: #55883B;') : document.getElementById(`${i+1}-1`).setAttribute('style', 'background-color: #9A6735;')
-      productivityLog[i].hydrated? document.getElementById(`${i+1}-2`).setAttribute('style', 'background-color: #55883B;') : document.getElementById(`${i+1}-2`).setAttribute('style', 'background-color: #9A6735;')
-      productivityLog[i].learned? document.getElementById(`${i+1}-3`).setAttribute('style', 'background-color: #55883B;') : document.getElementById(`${i+1}-3`).setAttribute('style', 'background-color: #9A6735;')
-      productivityLog[i].walked? document.getElementById(`${i+1}-4`).setAttribute('style', 'background-color: #55883B;') : document.getElementById(`${i+1}-4`).setAttribute('style', 'background-color: #9A6735;')
-        }
+      productivityLog[i].challenged? document.getElementById(`${i+1}-1`).setAttribute('style', 'background-color: #218838;') : document.getElementById(`${i+1}-1`).setAttribute('style', 'background-color: #D1A54B;')
+      productivityLog[i].hydrated? document.getElementById(`${i+1}-2`).setAttribute('style', 'background-color: #218838;') : document.getElementById(`${i+1}-2`).setAttribute('style', 'background-color: #D1A54B;')
+      productivityLog[i].learned? document.getElementById(`${i+1}-3`).setAttribute('style', 'background-color: #218838;') : document.getElementById(`${i+1}-3`).setAttribute('style', 'background-color: #D1A54B;')
+      productivityLog[i].walked? document.getElementById(`${i+1}-4`).setAttribute('style', 'background-color: #218838;') : document.getElementById(`${i+1}-4`).setAttribute('style', 'background-color: #D1A54B;')
       }
     }
+  }
 );
 
 
