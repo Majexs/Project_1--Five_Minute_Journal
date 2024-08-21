@@ -1,37 +1,54 @@
 /*color palette*/
-:root {
-  --daisy: #E9E7DA;
-  --light-daisy: #F2F1EC;
-  --gold: #CDA34F;
-  --stem: #636B46;
-  --greenery: #373F27;
-  --grid-cols: 1;
-  --grid-rows: 1;
-}
-
-
-/* Added image background to landing page*/
-
 body {
-
+  width: 90%;
   margin: 0 auto; 
   padding: 0;
   height: 100vh; /* Full viewport height */
-  background-image: url('https://images.pexels.com/photos/305821/pexels-photo-305821.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); /* Replace with the path to your image */
+  background-image: url('https://images.pexels.com/photos/305821/pexels-photo-305821.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+   /* Replace with the path to your image */
   background-size: cover; /* Ensures the image covers the entire background */
   background-position: center; /* Centers the image */
   background-repeat: no-repeat; /* Prevents the image from repeating */
   color: black; ; text-shadow: 1px 1px 1px white;
- 
-  
-  font-size: 1.15em;
-
+ font-size: 1.15em;
 }
 
 /* end of image background */
 .title{
   width:fit-content;
 }
+.btn {
+ margin-top: 5px;
+  --bs-btn-padding-x: 1.5rem;
+  --bs-btn-padding-y: .5rem;
+  --bs-btn-font-size: 1rem;
+  --bs-btn-font-size: 1.5rem;
+}
+.gauge {
+  margin-top: 10px;
+
+}
+
+.journalButton {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mood{
+  display: block;
+  padding: 10px;
+  border: 2.5px solid #b69c9c;
+  border-radius: 8px;
+  backface-visibility: hidden;
+}
+
+#energyLevel{
+  width: 20%; 
+}
+
+
 :root {
   --grid-cols: 1;
   --grid-rows: 1;
@@ -54,51 +71,31 @@ body {
   list-style-type: none;
 }
 
-header {
-  background-color: var(--gold);
-  color: var(--greenery);
+.OnDisplay{
+  display:block;
+}
+
+.OffDisplay{
+  display: none;
+}
+
+.quoteCard{
   text-align: center;
 }
 
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100px;
-  height: 100%;
-  background-image: url('../images/flowerpic3.png');
-  background-repeat: repeat-y;
-  background-size: 100% auto;
+.popUpStyle{
+  background-color: #fffbef;
+  height: 100vh;
+  width: 100%;
   z-index: 2;
-  border-right: 4px solid var(--stem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-h3 {
-  color: var(--greenery);
+.qoutehold{
+  border: 1px solid black;
+  border-radius: 50px;
+  padding: 40px;
+  font-family: Arial, Helvetica, sans-serif;
 }
-
-.timer-container {
-  position: absolute;
-  right: 10px;
-  background-color: var(--stem);
-  color: var(--daisy);
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-size: 16px;
-}
-
-.form-custom-style {
-  background-color: var(--light-daisy);
-  color: var(--greenery);
-  border: 1.5px solid var(--gold);
-  padding: 20px;
-  border-radius: 10px;
-
-}
-
-.btn-custom {
-  background-color: var(--stem);
-  color: var(--light-daisy);
-  border: none;
-}
-
