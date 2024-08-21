@@ -81,29 +81,37 @@ var button = document.getElementById('submitButton');
 let qoute;
 let author;
 
-var a = [];
-a.push(JSON.parse(localStorage.getItem('session')));
-localStorage.setItem('session', JSON.stringify(a));
+var a = localStorage.setItem('ranNum',[]);
+
 
 const RandomQuote = function (){
     
     const Qouts={
         
-        author:['Vladimir Lenin',"Mahatma Gandhi",'Thomas Alva Edison','John F. Kennedy','Stephen Hawking','Booker T. Washington','George R.R. Martin'],
+        author:['Vladimir Lenin',"Mahatma Gandhi",'Thomas Alva Edison','John F. Kennedy','Michael Jordan', 
+          'Stephen Hawking','Booker T. Washington','George R.R. Martin','Leonardo Da Vinci','Abraham Lincoln','Albert Einstein','A.A. Mine','Charles Kettering',
+          'Jack Canfield','George Bernard Shaw','Og Mandino','Viktor E. Frankl','Deepak Chopra','Kobe Bryant'
+        ],
         
         Qout:["Learning is never done without error, and defeat",
             "You must be the change you wish to see in the world.",
             "There is no substitute for hard work.","Victory has a thousand fathers, but defeat is an orphan." ,
             "However difficult life may seem, there is always something you can do and succeed at.",'Success is to be measured not so much by the position that one has reached in life as by the obstacles which he has overcome.',
-            "Once you’ve accepted your flaws, no one can use them against you.",
-        ],
+            "Once you’ve accepted your flaws, no one can use them against you.","You must expect great things of yourself before you can do them.",
+            "It had long since come to my attention that people of accomplishment rarely sat back and let things happen to them. They went out and happened to things.",
+            "The best way to predict your future is to create it.","If you want to live a happy life, tie it to a goal, not to people or things.","You’re braver than you believe, and stronger than you seem, and smarter than you think.",
+            "Everything you want is on the other side of fear.","Life isn't about finding yourself. Life is about creating yourself.","Believe and act as if it were impossible to fail.","Always do your best. What you plant now, you will harvest later.","When we are no longer able to change a situation, we are challenged to change ourselves.",
+            "Always go with your passions. Never ask yourself if it’s realistic or not.","Everything negative — pressure, challenges — is all an opportunity for me to rise."
+          ]
 
     };
 
     
     var RandomNum = Math.floor(Math.random()* Qouts.Qout.length);
     var RandomNumS = RandomNum.toString()
-    SaveDataToLocalStorage(RandomNum)
+    // SaveDataToLocalStorage(RandomNum)
+
+   
     
     qoute=`"${Qouts.Qout[RandomNum]}"  `;
 
@@ -112,18 +120,18 @@ const RandomQuote = function (){
     console.log(qoute+author)
 }
 
-function SaveDataToLocalStorage(data)
-{
-    var a = [];
-    // Parse the serialized data back into an aray of objects
-    a = JSON.parse(localStorage.getItem('session')) || [];
-    // Push the new data (whether it be an object or anything else) onto the array
-    a.push(data);
-    // Alert the array value
+// function SaveDataToLocalStorage(data)
+// {
+//     var a = [];
+//     // Parse the serialized data back into an aray of objects
+//     a = JSON.parse(localStorage.getItem('session')) || [];
+//     // Push the new data (whether it be an object or anything else) onto the array
+//     a.push(data);
+//     // Alert the array value
       
-    // Re-serialize the array back into a string and store it in localStorage
-    localStorage.setItem('session', JSON.stringify(a));
-}
+//     // Re-serialize the array back into a string and store it in localStorage
+//     localStorage.setItem('session', JSON.stringify(a));
+// }
 
 function HtmlChange(){
 
@@ -134,10 +142,13 @@ function HtmlChange(){
   document.getElementById('pop_up').classList.add('OnDisplay');
   document.getElementById('pop_up').classList.add('popUpStyle');
   document.getElementById('pop_up').classList.remove('OffDisplay')
-  document.getElementById('journalEntry').classList.remove('OnDisplay');
-  document.getElementById('journalEntry').classList.add('OffDisplay');
+  // document.getElementById('journalEntry').classList.remove('OnDisplay');
+  // document.getElementById('journalEntry').classList.add('OffDisplay');
   const header= document.getElementsByTagName("header")[0]
+  const section = document.getElementsByTagName('section')[0];
   header.classList.add('OffDisplay')
+  section.classList.add('OffDisplay')
+  console.log(section)
   
 }
 
