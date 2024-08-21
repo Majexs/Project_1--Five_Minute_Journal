@@ -10,8 +10,6 @@
 }
 
 body {
-  margin: 0 auto; 
-  padding: 0;
   height: 100vh; /* Full viewport height */
   background-color: var(--daisy);
   color: var(--greenery);
@@ -96,13 +94,6 @@ h3 {
   align-items: center;
 }
 
-.mood{
-  display: block;
-  padding: 10px;
-  border: 2.5px solid #b69c9c;
-  border-radius: 8px;
-  backface-visibility: hidden;
-}
 
 #energyLevel{
   width: 20%; 
