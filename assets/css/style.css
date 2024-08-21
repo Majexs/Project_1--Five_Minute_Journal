@@ -67,7 +67,6 @@ header {
   background-image: url('../images/flowerpic3.png');
   background-repeat: repeat-y;
   background-size: 100% auto;
-  z-index: 2;
   border-right: 4px solid var(--stem);
 }
 
