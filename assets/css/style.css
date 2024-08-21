@@ -12,12 +12,11 @@
 
 /* Added image background to landing page*/
 body {
-  margin: 0 auto; 
-  padding: 0;
   height: 100vh; /* Full viewport height */
   background-color: var(--daisy);
   color: var(--greenery);
 }
+
 /* end of image background */
 .title{
   width:fit-content;
@@ -56,7 +55,6 @@ header {
   background-image: url('../images/flowerpic3.png');
   background-repeat: repeat-y;
   background-size: 100% auto;
-  z-index: 2;
   border-right: 4px solid var(--stem);
 }
 
