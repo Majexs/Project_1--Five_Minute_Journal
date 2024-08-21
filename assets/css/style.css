@@ -9,11 +9,7 @@
   --grid-rows: 1;
 }
 
-
-/* Added image background to landing page*/
 body {
-  margin: 0 auto; 
-  padding: 0;
   height: 100vh; /* Full viewport height */
   background-color: var(--daisy);
   color: var(--greenery);
@@ -79,6 +75,30 @@ h3 {
   color: var(--greenery);
 }
 
+.btn {
+ margin-top: 5px;
+  --bs-btn-padding-x: 1.5rem;
+  --bs-btn-padding-y: .5rem;
+  --bs-btn-font-size: 1rem;
+  --bs-btn-font-size: 1.5rem;
+}
+.gauge {
+  margin-top: 10px;
+
+}
+
+.journalButton {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+#energyLevel{
+  width: 20%; 
+}
+
 .timer-container {
   position: absolute;
   right: 10px;
@@ -103,4 +123,8 @@ h3 {
   color: var(--light-daisy);
   border: none;
 }
+
+
+
+
 

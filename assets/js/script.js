@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
           button.style.backgroundColor = '#d3d3d3'; // Highlight selected mood
           const mood = button.dataset.mood;
           localStorage.setItem('mood', mood);
-          moodMessage.textContent = `You are ${mood.replace('-', ' ')} today`;
+          moodMessage.textContent = `You are ${mood.replace('-', ' ')} today`; 
       });
   });
 
