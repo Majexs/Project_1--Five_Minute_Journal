@@ -18,6 +18,20 @@ body {
   background-color: var(--daisy);
   color: var(--greenery);
 }
+
+h2,
+h3 {
+  padding: .5rem;
+}
+
+ul {
+  padding: .5rem;
+}
+
+li {
+  padding: .5rem;
+}
+
 /* end of image background */
 .title{
   width:fit-content;
@@ -34,6 +48,7 @@ body {
   padding: .25em;
   border: 1px solid #0c0b0b;
   text-align: center;
+  background-color: #E9E7DA;
 
 }
 
