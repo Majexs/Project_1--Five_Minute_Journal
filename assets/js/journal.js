@@ -75,8 +75,11 @@ console.log(allFormData);
 });
 
 //feature-submission_popup
+
 var button = document.getElementById('submitButton');
-var CB = document.getElementById('clearD')
+
+let qoute;
+let author;
 
 var a = [];
 a.push(JSON.parse(localStorage.getItem('session')));
@@ -92,7 +95,7 @@ const RandomQuote = function (){
             "You must be the change you wish to see in the world.",
             "There is no substitute for hard work.","Victory has a thousand fathers, but defeat is an orphan." ,
             "However difficult life may seem, there is always something you can do and succeed at.",'Success is to be measured not so much by the position that one has reached in life as by the obstacles which he has overcome.',
-            "Once you’ve accepted your flaws, no one can use them against you.",'',
+            "Once you’ve accepted your flaws, no one can use them against you.",
         ],
 
     };
@@ -102,7 +105,11 @@ const RandomQuote = function (){
     var RandomNumS = RandomNum.toString()
     SaveDataToLocalStorage(RandomNum)
     
-    //return alert(`"${Qouts.Qout[RandomNum]}" Author- ${Qouts.author[RandomNum]} `)
+    qoute=`"${Qouts.Qout[RandomNum]}"  `;
+
+    author=`Author- ${Qouts.author[RandomNum]} `;
+
+    console.log(qoute+author)
 }
 
 function SaveDataToLocalStorage(data)
@@ -118,8 +125,26 @@ function SaveDataToLocalStorage(data)
     localStorage.setItem('session', JSON.stringify(a));
 }
 
-button.addEventListener('click', RandomQuote)
+function HtmlChange(){
 
-CB.addEventListener('click', ()=>{
-    localStorage.removeItem("session")
+  const qoutes = document.getElementById("Quote");
+  const authorHold = document.getElementById("authorHold");
+  qoutes.innerHTML = qoute
+  authorHold.innerHTML = author
+  document.getElementById('pop_up').classList.add('OnDisplay');
+  document.getElementById('pop_up').classList.add('popUpStyle');
+  document.getElementById('pop_up').classList.remove('OffDisplay')
+  document.getElementById('journalEntry').classList.remove('OnDisplay');
+  document.getElementById('journalEntry').classList.add('OffDisplay');
+  const header= document.getElementsByTagName("header")[0]
+  header.classList.add('OffDisplay')
+  
+}
+
+button.addEventListener('click', ()=> {
+  RandomQuote()
+  HtmlChange()
+  // location.replace("poppage.html")
+  
+
 })
