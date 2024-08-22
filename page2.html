@@ -10,126 +10,152 @@
     </head>
 
         <body>
-            <header>
-                <h1 class="mx-auto title">Five Minute Journal</h1>
-            </header>
+            <main>
+                <header>
+                    <h1 class="mx-auto title">Five Minute Journal</h1>
+                </header>
 
-            <!--Flower Image for sidebar-->
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-1 sidebar"></div>
+                <!--Flower Image for sidebar-->
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-2 sidebar"></div>
 
-                    <div class="col-10 offset-1">
-                        <main>
-                        <!--Journal Entry-->
-                            <section class="container mt-5">
-                                <!--Timer-->
-                                <div class="col-12 d-flex justify-content-end mb-0">
-                                    <div class="timer-container timer-box">
-                                        <span id="timer" class="text-center display-7">00:00</span>
+                        <div class="col-10 offset-2">
+
+                            <!--Journal Entry-->
+                                <section class="container mt-5">
+                                    <!--Timer-->
+                                    <div class="col-12 d-flex justify-content-end mb-0">
+                                        <div class="timer-container timer-box">
+                                            <span id="timer" class="text-center display-7">00:00</span>
+                                        </div>
                                     </div>
-                                </div>
 
-                                <!--I am grateful for-->
-                                <div>
-                                    <form id="greatfulForm" class="mb-3">
-                                        <h3>I am grateful for...</h3>
-                                        <div class="form-group row">
-                                            <label for="greatfulEntry1" class="col-form-label">1.</label>
-                                            <div class="col-sm-11">
-                                                <input type="text" id="greatfulEntry1" class="form-control form-custom-style" name="Input 1">
+                                    <!--I am grateful for-->
+                                    <div>
+                                        <form id="greatfulForm" class="mb-3">
+                                            <h3>I am grateful for...</h3>
+                                            <div class="form-group row">
+                                                <label for="greatfulEntry1" class="col-form-label">1.</label>
+                                                <div class="col-sm-11">
+                                                    <input type="text" id="greatfulEntry1" class="form-control form-custom-style" name="Input 1">
+                                                </div>
                                             </div>
-                                        </div>
 
-                                        <div class="form-group row">
-                                            <label for="greatfulEntry2" class="col-form-label">2.</label>
-                                            <div class="col-sm-11">
-                                                <input type="text" id="greatfulEntry2" class="form-control form-custom-style" name="Input 2">
+                                            <div class="form-group row">
+                                                <label for="greatfulEntry2" class="col-form-label">2.</label>
+                                                <div class="col-sm-11">
+                                                    <input type="text" id="greatfulEntry2" class="form-control form-custom-style" name="Input 2">
+                                                </div>
                                             </div>
-                                        </div>
 
-                                        <div class="form-group row">
-                                            <label for="greatfulEntry3" class="col-form-label">3.</label>
-                                            <div class="col-sm-11">
-                                                <input type="text" id="greatfulEntry3" class="form-control form-custom-style" name="Input 3">
+                                            <div class="form-group row">
+                                                <label for="greatfulEntry3" class="col-form-label">3.</label>
+                                                <div class="col-sm-11">
+                                                    <input type="text" id="greatfulEntry3" class="form-control form-custom-style" name="Input 3">
+                                                </div>
                                             </div>
-                                        </div>
-                                    </form>
-                                </div>
+                                        </form>
+                                    </div>
 
-                                <!--What would make today great?-->
-                                <div>
-                                    <form id="todayForm" class="mb-3">
-                                        <h3>What would make today excellent?</h3>
-                                        <div class="form-group row">
-                                            <label for="todayExcellent1" class="col-form-label">1.</label>
-                                            <div class="col-sm-11">
-                                                <input type="text" id="todayExcellent1" class="form-control form-custom-style" name="Input 1">
+                                    <!--What would make today great?-->
+                                    <div>
+                                        <form id="todayForm" class="mb-3">
+                                            <h3>What would make today excellent?</h3>
+                                            <div class="form-group row">
+                                                <label for="todayExcellent1" class="col-form-label">1.</label>
+                                                <div class="col-sm-11">
+                                                    <input type="text" id="todayExcellent1" class="form-control form-custom-style" name="Input 1">
+                                                </div>
                                             </div>
-                                        </div>
 
-                                        <div class="form-group row">
-                                            <label for="todayExcellent2" class="col-form-label">2.</label>
-                                            <div class="col-sm-11">
-                                                <input type="text" id="todayExcellent2" class="form-control form-custom-style" name="Input 2">
+                                            <div class="form-group row">
+                                                <label for="todayExcellent2" class="col-form-label">2.</label>
+                                                <div class="col-sm-11">
+                                                    <input type="text" id="todayExcellent2" class="form-control form-custom-style" name="Input 2">
+                                                </div>
                                             </div>
-                                        </div>
 
-                                        <div class="form-group row">
-                                            <label for="todayExcellent3" class="col-form-label">3.</label>
-                                            <div class="col-sm-11">
-                                                <input type="text" id="todayExcellent3" class="form-control form-custom-style" name="Input 3">
+                                            <div class="form-group row">
+                                                <label for="todayExcellent3" class="col-form-label">3.</label>
+                                                <div class="col-sm-11">
+                                                    <input type="text" id="todayExcellent3" class="form-control form-custom-style" name="Input 3">
+                                                </div>
                                             </div>
-                                        </div>
 
-                                    </form>
-                                </div>
+                                        </form>
+                                    </div>
 
-                                <!--Daily affirmations-->
-                                <div>
-                                    <form id="affirmationForm" class="mb-3">
-                                        <h3>Daily affirmations</h3>
-                                        <div class="form-group row">
-                                            <label for="dailyAffirmation1" class="col-form-label">1.</label>
-                                            <div class="col-sm-11">
-                                                <input type="text" id="dailyAffirmation1" class="form-control form-custom-style" name="Input 1">
+                                    <!--Daily affirmations-->
+                                    <div>
+                                        <form id="affirmationForm" class="mb-3">
+                                            <h3>Daily affirmations</h3>
+                                            <div class="form-group row">
+                                                <label for="dailyAffirmation1" class="col-form-label">1.</label>
+                                                <div class="col-sm-11">
+                                                    <input type="text" id="dailyAffirmation1" class="form-control form-custom-style" name="Input 1">
+                                                </div>
                                             </div>
-                                        </div>
 
-                                        <div class="form-group row">
-                                            <label for="dailyAffirmation2" class="col-form-label">2.</label>
-                                            <div class="col-sm-11">
-                                                <input type="text" id="dailyAffirmation2" class="form-control form-custom-style" name="Input 2">
+                                            <div class="form-group row">
+                                                <label for="dailyAffirmation2" class="col-form-label">2.</label>
+                                                <div class="col-sm-11">
+                                                    <input type="text" id="dailyAffirmation2" class="form-control form-custom-style" name="Input 2">
+                                                </div>
                                             </div>
-                                        </div>
 
-                                        <div class="form-group row">
-                                            <label for="dailyAffirmation3" class="col-form-label">3.</label>
-                                            <div class="col-sm-11">
-                                                <input type="text" id="dailyAffirmation3" class="form-control form-custom-style" name="Input 3">
+                                            <div class="form-group row">
+                                                <label for="dailyAffirmation3" class="col-form-label">3.</label>
+                                                <div class="col-sm-11">
+                                                    <input type="text" id="dailyAffirmation3" class="form-control form-custom-style" name="Input 3">
+                                                </div>
                                             </div>
-                                        </div>
 
-                                    </form>
-                                </div>
+                                        </form>
+                                    </div>
 
-                                <!--End Journal Submit Button-->
-                                <div class="d-flex justify-content-center">
-                                <button id="submitButton" type="button" class="btn btn-custom btn-success w-25">Submit</button>
-                                </div>
+                                    <!--End Journal Submit Button-->
+                                    <div class="d-flex justify-content-center">
+                                    <button id="submitButton" type="button" class="btn btn-custom btn-success w-25">Submit</button>
+                                    </div>
 
-                            </section>
+                                </section>
 
-                        </main>
+
+
+                            
+                        </div>
                     </div>
                 </div>
-            </div>
-            <footer class="offset-1">
-                <p>&copy; 2024 Five Minute Journal</p>
-            </footer>
 
+                <section id="pop_up" class="OffDisplay">
+                    
+                    <div class="sidebar"></div>
+                        <div class="qoutehold">
+
+
+
+
+                            <div class="quoteCard">
+                                <h4>Way to go! Amazing job submitting today's 5 minute<br>Journal!</h4>
+                            
+                                <h5>Quote of the day:</h5>
+                                <p id="Quote"> </p>
+                                <p id="authorHold"> </p>
+                                <button class='pastButton'> Past Entries</button>
+                            </div>
+                        </div>
+
+                        
+                    
+                </section>
+            </main>
             <script src="./assets/js/journal.js"></script>
             <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        </body>
+    </html>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
          <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         </body>
