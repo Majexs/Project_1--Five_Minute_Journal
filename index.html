@@ -8,95 +8,85 @@
         <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
         <title>Five Minute Journal</title>
     </head>
-        <body>
         
-            
-            <header>
-                <h1 class="mx-auto title">Five Minute Journal</h1>
-            </header>
+    <body>
+        <header>
+            <h1 class="mx-auto title">Five Minute Journal</h1>
+        </header>
 
-                <div class="container-fluid">
-                <div class="row">
-                    <div class="col-2 sidebar"></div>
-                    <div class="col-10 offset-1">
+        <!-- Creates floral sidebar -->
+        <div class="container-fluid">
+        <div class="row">
+            <div class="col-2 sidebar"></div>
+            <div class="col-10 offset-1">
 
-            <main>
-                <!--Yesterday's Retrospective-->
-                <section>
-                    <div>
-                        <h2>
-                            Yesterday's Retrospective:
-                        </h2>
-                        <ul class="list-of-habits">
-                            <li>
-                                <label>
-                                    <input type="checkbox" id="challenged">Completed Yesterday's Challenge
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" id="hydrated">Drink 16 Cups of Water
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" id="learned">Learned Something New
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" id="walked">Walked 10,000 Steps
-                                </label>
-                            </li>
-                            <li>
-                                <button type="submit" id="submit_yesterday" class="btn btn-custom btn-success w-20">Submit</button>
-                            </li>
-                        </ul>
+        <main>
+            <!--Yesterday's Retrospective-->
+            <section>
+                <div>
+                    <h2>
+                        Yesterday's Retrospective:
+                    </h2>
+                    <ul class="list-of-habits">
+                        <li>
+                            <label>
+                                <input type="checkbox" id="challenged">Completed Yesterday's Challenge
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="checkbox" id="hydrated">Drink 16 Cups of Water
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="checkbox" id="learned">Learned Something New
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="checkbox" id="walked">Walked 10,000 Steps
+                            </label>
+                        </li>
+                        <li>
+                            <button type="submit" id="submit_yesterday" class="btn btn-custom btn-success w-20">Submit</button>
+                        </li>
+                    </ul>
+                </div>
+                <div id="daily_tracker" class="grid-item">
+                    <!-- A display to measure tracking progress, implemented by a submit button -->
+                </div>
+            </section>
+
+            <hr>
+
+            <!--Temperature Check-->
+            <div class="mx-auto mood">
+                <h2 class="">What's your mood today?</h2>
+                    <div class="emojis">
+                        <button class="btn btn-light mood-btn" data-mood="very-sad" aria-label="Very Sad">&#128577;</button>
+                        <button class="btn btn-light mood-btn" data-mood="sad" aria-label="Sad">&#128543;</button>
+                        <button class="btn btn-light mood-btn" data-mood="neutral" aria-label="Neutral">&#128528;</button>
+                        <button class="btn btn-light mood-btn" data-mood="happy" aria-label="Happy">&#128578;</button>
+                        <button class="btn btn-light mood-btn" data-mood="very-happy" aria-label="Very Happy">&#128513;</button>
                     </div>
-                    <div id="daily_tracker" class="grid-item">
-                        <!-- A display to measure tracking progress, implemented by a submit button -->
+                    <div id="moodMessage" class="mood-message mb-4"></div>
+                <h3>What's your energy level today?</h3>
+                    <div class="gauge">
+                        <input  type="range" id="energyLevel" min="0" max="100" value="100" >
+                        <span  id="energyValue">100</span>
                     </div>
-                    <div>
-                        <h3>
-                            Yesterday's Highlight:
-                        </h3>
-                        <p class="yesterdays_highlight">
-                            <!-- Pulled out of local storage -->
-                        </p>
-                    </div>
-                    <hr>
+            <div class="journalButton">
+                <button type="button" class="btn btn-custom btn-success w-25" onclick="window.location.href='./page2.html';">Start Five Minute Journal</button>
+            </div>
+        </main>
 
-                </section>
-
-                <!--Temperature Check-->
-                <div class="mx-auto mood">
-                            <h2 class="">What's your mood today?</h2>
-                            <div class="emojis">
-                                <button class="btn btn-light mood-btn" data-mood="very-sad" aria-label="Very Sad">&#128577;</button>
-                                <button class="btn btn-light mood-btn" data-mood="sad" aria-label="Sad">&#128543;</button>
-                                <button class="btn btn-light mood-btn" data-mood="neutral" aria-label="Neutral">&#128528;</button>
-                                <button class="btn btn-light mood-btn" data-mood="happy" aria-label="Happy">&#128578;</button>
-                                <button class="btn btn-light mood-btn" data-mood="very-happy" aria-label="Very Happy">&#128513;</button>
-                            </div>
-                            <div id="moodMessage" class="mood-message mb-4"></div>
+        <footer>
+            <p>&copy; 2024 Five Minute Journal</p>
+        </footer>
             
-                            <h3>What's your energy level today?</h3>
-                            <div class="gauge">
-                                <input  type="range" id="energyLevel" min="0" max="100" value="100" >
-                                <span  id="energyValue">100</span>
-                            </div>
-                            <div class="journalButton">
-                            <button type="button" class="btn btn-custom btn-success w-25" onclick="window.location.href='./page2.html';">Start Five Minute Journal</button>
-                            </div>
-            </main>
-
-            <footer>
-                <p>&copy; 2024 Five Minute Journal</p>
-            </footer>
-            
-                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-            <script src= "./assets/js/script.js"></script>
-            <script src="./assets/js/journal.js"></script>
-            
-        </body>
-    </html>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src= "./assets/js/script.js"></script>
+        <script src="./assets/js/journal.js"></script>    
+    </body>
+</html>
