@@ -64,22 +64,6 @@ submitYesterday.addEventListener('click', function(event) {
 }
 );
 
-
-// Yesterday's Highlight Section
-const yesterdaysHighlight = document.querySelector('.yesterdays_highlight');
-
-// Function to pull a random entry from yesterday out and display it
-
-// Collect an array of data from Local Storage
-const yesterdaysEntry = JSON.parse(localStorage.getItem('allFormData')) || [];
-
-// Take a random item from the array
-const randomJournalEntry = yesterdaysEntry[Math.floor(Math.random() * yesterdaysEntry.length)];
-
-// Display that random item to the <p> tag
-yesterdaysHighlight.textContent = randomJournalEntry;
-
-
 //--------------------------------------------------------------------------------
 
 document.addEventListener('DOMContentLoaded', () => {
