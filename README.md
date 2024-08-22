@@ -3,6 +3,11 @@
 ## Description
 This website is a group project for Module 01 of the Columbia Engineering Coding Bootcamp. It is the culmination of six weeks of work, where we explored programs such as HTML, CSS, & Javascript to create aesthetic and dynamic webpages.
 
+## User Story 
+AS a user, 
+I WANT to enhance my healthy mindfulnedd practice on aconsistent basis
+SO THAT I can improve my mental well-being and continually foster a positive mindset 
+
 ### What is a Five-Minute Journal?
 A Five-Minute Journal is a simple, structured journaling method designed to help individuals cultivate gratitude, mindfulness, and positivity in just a few minutes each day. It typically involves a daily practice of writing down things you are grateful for, setting intentions for the day, and reflecting on positive experiences.
 
@@ -19,7 +24,8 @@ It provides personal growth - allowing self-awareness and goal-setting, leading 
   n/a
 
 ## Usage
-This site has four components:
+This site has four main components outlined below. Here is the user journey: 
+
 
 ### Daily Habit Tracker
 For two weeks at a time (14 days) you can keep track of important habits such as exercise, hydration, & completing the daily challenge. A helpful chart is included to document your progress. This section also includes a highlight from your journal entry from the previous day (assuming there is one).
@@ -31,7 +37,10 @@ This space allows you to check in with your current mood and energy level to mak
 Once you navigate to this page, you will be given five minutes to meditate on your life - goals, thoughts, and appreciations. Each section will have three entries you can include, which will then be documented in local storage.
 
 ### An Inspirational Pop-Up
-Once you have completed the journal entry, you'll be sent off with a famous quote - hope it inspires you!
+Once you have completed the journal entry, you'll be sent off with a famous quote and a challenge for the day - hope it inspires you!
+
+## Link to Deployed Application 
+x
 
 ## Credits
   This project was developed by James Swanson (https://github.com/Majexs), Emily Gretsky (https://github.com/egretsky), Oscar Ayala (https://github.com/gggrouchy), and Jefferson Rosario (https://github.com/jpappy973).
