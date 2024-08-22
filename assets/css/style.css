@@ -9,16 +9,6 @@
   --grid-rows: 1;
 }
 
-
-/* Added image background to landing page*/
-body {
-  width: 100%;
-  margin: 0 auto; 
-  padding: 0;
-  height: 100vh; /* Full viewport height */
-  background-color: var(--daisy);
-  color: var(--greenery);
-
 body {
   height: 100vh; /* Full viewport height */
   background-color: var(--daisy);
@@ -36,20 +26,11 @@ ul {
 
 li {
   padding: .5rem;
-
 }
 
 /* end of image background */
 .title{
   width:fit-content;
-
-}
-
-
-:root {
-  --grid-cols: 1;
-  --grid-rows: 1;
-
   padding-block:10px 20px;
 }
 
@@ -71,23 +52,10 @@ li {
   list-style-type: none;
 }
 
-
-
-.container{
-  width: 80%;
-  margin: 0 auto; 
-}
-
-
-
-.OnDisplay{
-  display:block;
-=======
 header {
   background-color: var(--gold);
   color: var(--greenery);
   text-align: center;
-
 }
 
 .sidebar {
@@ -102,14 +70,8 @@ header {
   border-right: 4px solid var(--stem);
 }
 
-
-
-.quoteCard{
-  text-align: center;
-
 h3 {
   color: var(--greenery);
-
 }
 
 .btn {
@@ -146,52 +108,6 @@ h3 {
   font-size: 16px;
 }
 
-
-.qoutehold p{
-  font-size:18px;
-  
-}
-
-.qoutehold h5{
-  margin: 10px 0 20px 0;
-}
-
-
-
-header {
-  background-color: var(--gold);
-  color: var(--greenery);
-  text-align: center;
-}
-
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100px;
-  height: 100%;
-  background-image: url('../images/flowerpic3.png');
-  background-repeat: repeat-y;
-  background-size: 100% auto;
-  z-index: 2;
-  border-right: 4px solid var(--stem);
-}
-
-h3 {
-  color: var(--greenery);
-}
-
-.timer-container {
-  position: absolute;
-  right: 10px;
-  background-color: var(--stem);
-  color: var(--daisy);
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-size: 16px;
-}
-
-
 .form-custom-style {
   background-color: var(--light-daisy);
   color: var(--greenery);
@@ -206,5 +122,48 @@ h3 {
   color: var(--light-daisy);
   border: none;
 }
+
+.OnDisplay{
+  display:block;
+}
+
+.OffDisplay{
+  display: none;
+}
+
+
+.quoteCard{
+  text-align: center;
+}
+
+.popUpStyle{
+  background-color: #fffbef;
+  height: 100vh;
+  width: 100%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qoutehold{
+  border: 1px solid black;
+  border-radius: 50px;
+  padding: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.qoutehold p{
+  font-size:18px;
+  
+}
+
+.qoutehold h5{
+  margin: 10px 0 20px 0;
+}
+
+
+
+
 
 
