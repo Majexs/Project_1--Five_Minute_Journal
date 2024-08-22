@@ -72,7 +72,9 @@ let allFormData = {
 }
 
 console.log(allFormData);
+localStorage.setItem('allFormData', JSON.stringify(allFormData));
 });
+
 
 //feature-submission_popup
 

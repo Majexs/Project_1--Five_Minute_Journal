@@ -11,9 +11,15 @@
         <body>
         
             
-            <div>
+            <header>
                 <h1 class="mx-auto title">Five Minute Journal</h1>
-            </div>
+            </header>
+
+                <div class="container-fluid">
+                <div class="row">
+                    <div class="col-2 sidebar"></div>
+                    <div class="col-10 offset-1">
+
             <main>
                 <!--Yesterday's Retrospective-->
                 <section>
@@ -43,7 +49,7 @@
                                 </label>
                             </li>
                             <li>
-                                <button type="submit" id="submit_yesterday">Submit</button>
+                                <button type="submit" id="submit_yesterday" class="btn btn-custom btn-success w-20">Submit</button>
                             </li>
                         </ul>
                     </div>
@@ -63,11 +69,9 @@
                 </section>
 
                 <!--Temperature Check-->
-                <div class="border border-primary">
-                    <div class="row">
-                        <div class="col">
-                            <h1 class="">What's your mood today?</h1>
-                            <div class="mood-selection mb-4">
+                <div class="mx-auto mood">
+                            <h2 class="">What's your mood today?</h2>
+                            <div class="emojis">
                                 <button class="btn btn-light mood-btn" data-mood="very-sad" aria-label="Very Sad">&#128577;</button>
                                 <button class="btn btn-light mood-btn" data-mood="sad" aria-label="Sad">&#128543;</button>
                                 <button class="btn btn-light mood-btn" data-mood="neutral" aria-label="Neutral">&#128528;</button>
@@ -76,18 +80,23 @@
                             </div>
                             <div id="moodMessage" class="mood-message mb-4"></div>
             
-                            <h2 class="border-primary">What's your energy level today?</h2>
-                            <div class="energy-gauge mb-4">
-                                <input type="range" id="energyLevel" class="form-range" min="0" max="100" value="100">
-                                <span id="energyValue" class="d-block mt-2">100</span>
+                            <h3>What's your energy level today?</h3>
+                            <div class="gauge">
+                                <input  type="range" id="energyLevel" min="0" max="100" value="100" >
+                                <span  id="energyValue">100</span>
                             </div>
-                            <button onclick="window.location.href='./page2.html';">Start Five Minute Journal</button>
-                        </div>
-                    </div>
-                
+                            <div class="journalButton">
+                            <button type="button" class="btn btn-custom btn-success w-25" onclick="window.location.href='./page2.html';">Start Five Minute Journal</button>
+                            </div>
+            </main>
+
+            <footer>
+                <p>&copy; 2024 Five Minute Journal</p>
+            </footer>
             
-                <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
             <script src= "./assets/js/script.js"></script>
             <script src="./assets/js/journal.js"></script>
+            
         </body>
     </html>
