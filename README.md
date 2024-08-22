@@ -27,6 +27,10 @@ It provides personal growth - allowing self-awareness and goal-setting, leading 
 This site has four main components outlined below. Here is the user journey: 
 
 
+https://github.com/user-attachments/assets/18d09a24-b82b-4ea5-a368-85baa874da1a
+
+
+
 ### Daily Habit Tracker
 For two weeks at a time (14 days) you can keep track of important habits such as exercise, hydration, & completing the daily challenge. A helpful chart is included to document your progress. This section also includes a highlight from your journal entry from the previous day (assuming there is one).
 
