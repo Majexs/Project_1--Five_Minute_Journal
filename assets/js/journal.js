@@ -1,147 +1,163 @@
-/*color palette*/
-:root {
-  --daisy: #E9E7DA;
-  --light-daisy: #F2F1EC;
-  --gold: #CDA34F;
-  --stem: #636B46;
-  --greenery: #373F27;
-  --grid-cols: 1;
-  --grid-rows: 1;
+let timerInterval;
+let seconds = 0;
+let minutes = 0;
+
+// Function to format the time as MM:SS
+function formatTime(minutes, seconds) {
+    return (
+      String(minutes).padStart(2, '0') + ':' + String(seconds).padStart(2, '0')
+    );
+  }
+
+// Function to update the timer
+function updateTimer() {
+    seconds++;
+    if (seconds === 60) {
+      seconds = 0;
+      minutes++;
+    }
+    document.getElementById('timer').innerText = formatTime(minutes, seconds);
+  }
+  
+// Function to start the timer
+function startTimer() {
+    if (!timerInterval) {
+      timerInterval = setInterval(updateTimer, 1000);
+    }
+  }
+
+// Function to stop the timer
+function stopTimer() {
+    clearInterval(timerInterval);
+    timerInterval = null;
+  }
+
+// Start the timer when the page loads
+window.onload = startTimer;
+
+// Stop the timer when the submit button is clicked
+document.getElementById('submitButton').addEventListener('click', function() {
+    stopTimer();
+  });
+
+// Add event listeners to submit button
+document.getElementById('submitButton').addEventListener('click', function() {
+
+//Collect greatfulForm data in an object
+let greatfulForm = {
+  greatfulEntry1: document.getElementById('greatfulEntry1').value,
+  greatfulEntry2: document.getElementById('greatfulEntry2').value,
+  greatfulEntry3: document.getElementById('greatfulEntry3').value
+};
+
+//Collect todayForm data in an object
+let todayForm = {
+  todayEntry1: document.getElementById('todayExcellent1').value,
+  todayEntry2: document.getElementById('todayExcellent2').value,
+  todayEntry3: document.getElementById('todayExcellent3').value
+};
+
+//Collect todayForm data in an object
+let affirmationForm = {
+  affirmationEntry1: document.getElementById('dailyAffirmation1').value,
+  affirmationEntry2: document.getElementById('dailyAffirmation2').value,
+  affirmationEntry3: document.getElementById('dailyAffirmation3').value
+};
+
+//Store all form data in an object
+let allFormData = {
+  greatfulFormData: greatfulForm,
+  todayFormData: todayForm,
+  affirmationFormData: affirmationForm
 }
 
+console.log(allFormData);
+});
 
-/* Added image background to landing page*/
-body {
-  width: 100%;
-  margin: 0 auto; 
-  padding: 0;
-  height: 100vh; /* Full viewport height */
-  background-color: var(--daisy);
-  color: var(--greenery);
-}
-/* end of image background */
-.title{
-  width:fit-content;
-}
+//feature-submission_popup
 
+var button = document.getElementById('submitButton');
 
-:root {
-  --grid-cols: 1;
-  --grid-rows: 1;
-  padding-block:10px 20px;
-}
+let qoute;
+let author;
 
-#daily_tracker {
-  display: grid;
-  grid-template-rows: repeat(var(--grid-rows), 1fr);
-  grid-template-columns: repeat(var(--grid-cols), 1fr);
-}
-
-.grid-item {
-  padding: .25em;
-  border: 1px solid #0c0b0b;
-  text-align: center;
-
-}
-
-.list-of-habits {
-  list-style-type: none;
-}
+var a = [];
+a.push(JSON.parse(localStorage.getItem('session')));
+localStorage.setItem('session', JSON.stringify(a));
 
 
-.container{
-  width: 80%;
-  margin: 0 auto; 
-}
+const RandomQuote = function (){
+    
+    const Qouts={
+        
+        author:['Vladimir Lenin',"Mahatma Gandhi",'Thomas Alva Edison','John F. Kennedy','Michael Jordan', 
+          'Stephen Hawking','Booker T. Washington','George R.R. Martin','Leonardo Da Vinci','Abraham Lincoln','Albert Einstein','A.A. Mine','Charles Kettering',
+          'Jack Canfield','George Bernard Shaw','Og Mandino','Viktor E. Frankl','Deepak Chopra','Kobe Bryant'
+        ],
+        
+        Qout:["Learning is never done without error, and defeat",
+            "You must be the change you wish to see in the world.",
+            "There is no substitute for hard work.","Victory has a thousand fathers, but defeat is an orphan." ,
+            "However difficult life may seem, there is always something you can do and succeed at.",'Success is to be measured not so much by the position that one has reached in life as by the obstacles which he has overcome.',
+            "Once you’ve accepted your flaws, no one can use them against you.","You must expect great things of yourself before you can do them.",
+            "It had long since come to my attention that people of accomplishment rarely sat back and let things happen to them. They went out and happened to things.",
+            "The best way to predict your future is to create it.","If you want to live a happy life, tie it to a goal, not to people or things.","You’re braver than you believe, and stronger than you seem, and smarter than you think.",
+            "Everything you want is on the other side of fear.","Life isn't about finding yourself. Life is about creating yourself.","Believe and act as if it were impossible to fail.","Always do your best. What you plant now, you will harvest later.","When we are no longer able to change a situation, we are challenged to change ourselves.",
+            "Always go with your passions. Never ask yourself if it’s realistic or not.","Everything negative — pressure, challenges — is all an opportunity for me to rise."
+          ]
 
+    };
 
+    
+    var RandomNum = Math.floor(Math.random()* Qouts.Qout.length);
+    var RandomNumS = RandomNum.toString()
+    // SaveDataToLocalStorage(RandomNum)
 
-.OnDisplay{
-  display:block;
-}
+    SaveDataToLocalStorage(RandomNumS)
+    
+    qoute=`"${Qouts.Qout[RandomNum]}"  `;
 
-.OffDisplay{
-  display: none;
+    author=`Author- ${Qouts.author[RandomNum]} `;
+
+    console.log(qoute+author)
 }
 
-
-.quoteCard{
-  text-align: center;
+function SaveDataToLocalStorage(data)
+{
+    var a = [];
+    // Parse the serialized data back into an aray of objects
+    a = JSON.parse(localStorage.getItem('session')) || [];
+    // Push the new data (whether it be an object or anything else) onto the array
+    a.push(data);
+    // Alert the array value
+      
+    // Re-serialize the array back into a string and store it in localStorage
+    localStorage.setItem('session', JSON.stringify(a));
 }
 
-.popUpStyle{
-  background-color: #fffbef;
-  height: 100vh;
-  width: 100%;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+function HtmlChange(){
 
-.qoutehold{
-  border: 1px solid black;
-  border-radius: 50px;
-  padding: 40px;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.qoutehold p{
-  font-size:18px;
+  const qoutes = document.getElementById("Quote");
+  const authorHold = document.getElementById("authorHold");
+  qoutes.innerText = qoute
+  authorHold.innerHTML = author
+  document.getElementById('pop_up').classList.add('OnDisplay');
+  document.getElementById('pop_up').classList.add('popUpStyle');
+  document.getElementById('pop_up').classList.remove('OffDisplay')
+  // document.getElementById('journalEntry').classList.remove('OnDisplay');
+  // document.getElementById('journalEntry').classList.add('OffDisplay');
+  const header= document.getElementsByTagName("header")[0]
+  const section = document.getElementsByTagName('div')[0];
+  header.classList.add('OffDisplay')
+  section.classList.add('OffDisplay')
+  console.log(qoute)
   
 }
 
-.qoutehold h5{
-  margin: 10px 0 20px 0;
-}
+button.addEventListener('click', ()=> {
+  RandomQuote()
+  HtmlChange()
+  // location.replace("poppage.html")
+  
 
-
-
-header {
-  background-color: var(--gold);
-  color: var(--greenery);
-  text-align: center;
-}
-
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100px;
-  height: 100%;
-  background-image: url('../images/flowerpic3.png');
-  background-repeat: repeat-y;
-  background-size: 100% auto;
-  z-index: 2;
-  border-right: 4px solid var(--stem);
-}
-
-h3 {
-  color: var(--greenery);
-}
-
-.timer-container {
-  position: absolute;
-  right: 10px;
-  background-color: var(--stem);
-  color: var(--daisy);
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-size: 16px;
-}
-
-.form-custom-style {
-  background-color: var(--light-daisy);
-  color: var(--greenery);
-  border: 1.5px solid var(--gold);
-  padding: 20px;
-  border-radius: 10px;
-
-}
-
-.btn-custom {
-  background-color: var(--stem);
-  color: var(--light-daisy);
-  border: none;
-}
-
+})
