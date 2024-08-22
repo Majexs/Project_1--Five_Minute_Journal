@@ -20,8 +20,6 @@ It creates a positive mindset - fostering a more optimistic outlook in a fun ach
 
 It provides personal growth - allowing self-awareness and goal-setting, leading to personal development.
 
-## Installation
-  n/a
 
 ## Usage
 This site has four main components outlined below. Here is the user journey: 
@@ -44,7 +42,7 @@ Once you navigate to this page, you will be given five minutes to meditate on yo
 Once you have completed the journal entry, you'll be sent off with a famous quote and a challenge for the day - hope it inspires you!
 
 ## Link to Deployed Application 
-x
+https://majexs.github.io/Project_1--Five_Minute_Journal/
 
 ## Credits
   This project was developed by James Swanson (https://github.com/Majexs), Emily Gretsky (https://github.com/egretsky), Oscar Ayala (https://github.com/gggrouchy), and Jefferson Rosario (https://github.com/jpappy973).
